@@ -23,23 +23,7 @@ changing any detection logic.
 
 ## 🏗️ Architecture
 
-```mermaid
-flowchart LR
-    subgraph Build["Build (daily)"]
-        A["Authentication datamodel<br/>(machine accounts HOST$)"] --> B["Scheduled report<br/>daily, -25h"]
-        B -->|outputlookup| C[("ip_hostname_correlation_lookup<br/>IpAddress, Hostname")]
-        C -.->|inputlookup merge| B
-        C --> D["Lookup definition"]
-    end
-
-    subgraph Use["Use (per alert)"]
-        E["Correlation search<br/>(event or tstats)"] -->|calls macro| F["ip_hostname_resolver macro<br/>IP ⇄ Hostname, fallback to original"]
-        F --> G["Notable<br/>src_resolved / dst_resolved"]
-        G --> H["Incident Review<br/>title + columns"]
-    end
-
-    D -->|read| F
-```
+<img width="3120" height="1520" alt="ip_hostname_resolver" src="https://github.com/user-attachments/assets/9eb4fc8c-275d-4f6d-8f93-45c77d912de1" />
 
 - **Build:** a daily report reads machine-account logons and merges them into the lookup.
 - **Use:** each correlation search calls the macro, which writes `src_resolved` / `dst_resolved` into the notable.
