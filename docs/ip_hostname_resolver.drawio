@@ -1,83 +1,83 @@
 <mxfile host="app.diagrams.net">
   <diagram id="ip-hostname-resolver" name="IP Hostname Resolver">
-    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="420" math="0" shadow="0">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1560" pageHeight="760" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
         <!-- Containers -->
-        <mxCell id="build" value="Build (daily)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;dashed=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontColor=#3e4c59;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="20" y="20" width="960" height="170" as="geometry" />
+        <mxCell id="build" value="🏗️ BUILD — daily" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#1E62D0;strokeWidth=2;dashed=1;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;fontStyle=1;fontSize=18;fontColor=#1E62D0;arcSize=3;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1520" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="use" value="Use (per alert)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;dashed=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontColor=#3e4c59;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="20" y="230" width="960" height="150" as="geometry" />
+        <mxCell id="use" value="⚙️ USE — per alert" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#1E8E3E;strokeWidth=2;dashed=1;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;fontStyle=1;fontSize=18;fontColor=#1E8E3E;arcSize=3;" vertex="1" parent="1">
+          <mxGeometry x="20" y="420" width="1520" height="300" as="geometry" />
         </mxCell>
 
         <!-- Build row -->
-        <mxCell id="A" value="Authentication datamodel&lt;br&gt;&lt;i&gt;machine accounts (HOST$)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="40" y="90" width="190" height="70" as="geometry" />
+        <mxCell id="A" value="&lt;b&gt;Authentication datamodel&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;machine accounts (HOST$)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E62D0;strokeColor=#174EA6;strokeWidth=2;fontColor=#FFFFFF;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="300" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="B" value="Scheduled report&lt;br&gt;&lt;i&gt;daily, -25h&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="280" y="90" width="190" height="70" as="geometry" />
+        <mxCell id="B" value="&lt;b&gt;Scheduled report&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;daily, -25h&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E62D0;strokeColor=#174EA6;strokeWidth=2;fontColor=#FFFFFF;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="140" width="300" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="C" value="ip_hostname_correlation_lookup&lt;br&gt;&lt;i&gt;IpAddress, Hostname&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="520" y="80" width="200" height="90" as="geometry" />
+        <mxCell id="C" value="&lt;b&gt;ip_hostname_correlation_lookup&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;IpAddress, Hostname&lt;/span&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#F9AB00;strokeColor=#C77F00;strokeWidth=2;fontColor=#202124;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="125" width="320" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="D" value="Lookup definition" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="770" y="90" width="190" height="70" as="geometry" />
+        <mxCell id="D" value="&lt;b&gt;Lookup definition&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;case-insensitive&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9AB00;strokeColor=#C77F00;strokeWidth=2;fontColor=#202124;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="140" width="290" height="120" as="geometry" />
         </mxCell>
 
         <!-- Use row -->
-        <mxCell id="E" value="Correlation search&lt;br&gt;&lt;i&gt;event or tstats&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="40" y="280" width="190" height="70" as="geometry" />
+        <mxCell id="E" value="&lt;b&gt;Correlation search&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;event or tstats&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E8E3E;strokeColor=#137333;strokeWidth=2;fontColor=#FFFFFF;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="540" width="300" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="F" value="&lt;b&gt;ip_hostname_resolver&lt;/b&gt; macro&lt;br&gt;&lt;i&gt;IP ⇄ Hostname, fallback to original&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="280" y="280" width="210" height="70" as="geometry" />
+        <mxCell id="F" value="&lt;b&gt;ip_hostname_resolver&lt;/b&gt; macro&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;IP ⇄ Hostname, fallback to original&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9334E6;strokeColor=#7627BB;strokeWidth=2;fontColor=#FFFFFF;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="540" width="320" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="G" value="Notable&lt;br&gt;&lt;i&gt;src_resolved / dst_resolved&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="540" y="280" width="190" height="70" as="geometry" />
+        <mxCell id="G" value="&lt;b&gt;Notable&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;src_resolved / dst_resolved&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E8E3E;strokeColor=#137333;strokeWidth=2;fontColor=#FFFFFF;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="540" width="300" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="H" value="Incident Review&lt;br&gt;&lt;i&gt;title + columns&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="770" y="280" width="190" height="70" as="geometry" />
+        <mxCell id="H" value="&lt;b&gt;Incident Review&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;title + columns&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D93025;strokeColor=#A50E0E;strokeWidth=2;fontColor=#FFFFFF;fontSize=17;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="540" width="290" height="120" as="geometry" />
         </mxCell>
 
         <!-- Build edges -->
-        <mxCell id="eAB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="A" target="B">
+        <mxCell id="eAB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#174EA6;" edge="1" parent="1" source="A" target="B">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eBC" value="outputlookup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;fontSize=10;" edge="1" parent="1" source="B" target="C">
+        <mxCell id="eBC" value="outputlookup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#174EA6;fontSize=14;fontStyle=1;labelBackgroundColor=#EAF2FF;" edge="1" parent="1" source="B" target="C">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eCB" value="inputlookup merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;dashed=1;fontSize=10;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="C" target="B">
+        <mxCell id="eCB" value="inputlookup merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;dashed=1;strokeWidth=2;strokeColor=#C77F00;fontSize=14;fontStyle=1;fontColor=#C77F00;labelBackgroundColor=#EAF2FF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="C" target="B">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="620" y="55" />
-              <mxPoint x="375" y="55" />
+              <mxPoint x="980" y="85" />
+              <mxPoint x="590" y="85" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="eCD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="C" target="D">
+        <mxCell id="eCD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#C77F00;" edge="1" parent="1" source="C" target="D">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Cross edge: definition read by macro -->
-        <mxCell id="eDF" value="read" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="D" target="F">
+        <!-- Cross edge -->
+        <mxCell id="eDF" value="read" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#7627BB;fontSize=14;fontStyle=1;fontColor=#7627BB;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="D" target="F">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="865" y="210" />
-              <mxPoint x="385" y="210" />
+              <mxPoint x="1365" y="370" />
+              <mxPoint x="600" y="370" />
             </Array>
           </mxGeometry>
         </mxCell>
 
         <!-- Use edges -->
-        <mxCell id="eEF" value="| `ip_hostname_resolver`" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;fontSize=10;fontFamily=Courier New;" edge="1" parent="1" source="E" target="F">
+        <mxCell id="eEF" value="| `ip_hostname_resolver`" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#137333;fontSize=13;fontFamily=Courier New;fontStyle=1;labelBackgroundColor=#EAF8EE;verticalAlign=bottom;" edge="1" parent="1" source="E" target="F">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eFG" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="F" target="G">
+        <mxCell id="eFG" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#137333;" edge="1" parent="1" source="F" target="G">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eGH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="G" target="H">
+        <mxCell id="eGH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#137333;" edge="1" parent="1" source="G" target="H">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
