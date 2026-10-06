@@ -1,0 +1,16 @@
+``` ip_hostname_correlation_report
+    Builds and maintains ip_hostname_correlation_lookup.csv from machine-account logons.
+    Schedule: daily, time range earliest=-25h latest=now
+    Requires: Authentication datamodel accelerated for at least 2 days ```
+
+| tstats count FROM datamodel=Authentication
+    WHERE NOT Authentication.src IN ("-", "unknown", "::1", "127.0.0.1")    ```drop placeholder and loopback IPs```
+    BY Authentication.src, Authentication.user
+| search Authentication.user="*$*"                                          ```keep machine accounts only (HOST$), adjust to your account format```
+| rename Authentication.src AS IpAddress, Authentication.user AS Hostname
+| eval Hostname=replace(Hostname, "\$.*", "")                               ```strip "$" and any domain suffix```
+| table IpAddress, Hostname
+| dedup Hostname                                                            ```one row per host from this run```
+| append [ | inputlookup ip_hostname_correlation_lookup.csv ]               ```add existing rows AFTER the new ones```
+| dedup Hostname                                                            ```first row wins: new data overrides, unseen hosts are kept```
+| outputlookup ip_hostname_correlation_lookup.csv

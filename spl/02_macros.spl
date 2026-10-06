@@ -1,0 +1,32 @@
+``` Macro definitions for ip_hostname_resolver.
+    Paste each definition into Settings > Advanced search > Search macros.
+    Definitions start with "eval", not "| eval": the caller supplies the pipe.
+    Adapt the coalesce field lists in the first line to the IP fields in your environment. ```
+
+
+``` ===== ip_hostname_resolver  (no arguments, event-based alerts) =====
+    Usage: | `ip_hostname_resolver` ```
+
+eval tmp_src=coalesce(src_ip, IpAddress, LocalAddress, src),
+     tmp_dst=coalesce(dst_ip, RemoteAddress)                                         ```pick whichever IP field exists```
+| lookup ip_hostname_correlation_lookup IpAddress AS tmp_src OUTPUTNEW Hostname AS src_resolved     ```IP -> hostname```
+| lookup ip_hostname_correlation_lookup Hostname AS tmp_src OUTPUTNEW IpAddress AS src_resolved     ```hostname -> IP```
+| lookup ip_hostname_correlation_lookup IpAddress AS tmp_dst OUTPUTNEW Hostname AS dst_resolved
+| lookup ip_hostname_correlation_lookup Hostname AS tmp_dst OUTPUTNEW IpAddress AS dst_resolved
+| eval src_resolved=coalesce(src_resolved, tmp_src),
+       dst_resolved=coalesce(dst_resolved, tmp_dst)                                  ```no match: keep the original value```
+| fields - tmp_src, tmp_dst                                                          ```remove helper fields```
+
+
+``` ===== ip_hostname_resolver(1)  (argument: dm, tstats/datamodel alerts) =====
+    Usage: | `ip_hostname_resolver(Authentication)`  or  | `ip_hostname_resolver(All_Traffic)` ```
+
+eval tmp_src=coalesce('$dm$.src', '$dm$.src_ip', src_ip, IpAddress),
+     tmp_dst=coalesce('$dm$.dest', '$dm$.dest_ip', dst_ip, target_ips)               ```pick whichever IP field exists```
+| lookup ip_hostname_correlation_lookup IpAddress AS tmp_src OUTPUTNEW Hostname AS src_resolved
+| lookup ip_hostname_correlation_lookup Hostname AS tmp_src OUTPUTNEW IpAddress AS src_resolved
+| lookup ip_hostname_correlation_lookup IpAddress AS tmp_dst OUTPUTNEW Hostname AS dst_resolved
+| lookup ip_hostname_correlation_lookup Hostname AS tmp_dst OUTPUTNEW IpAddress AS dst_resolved
+| eval src_resolved=coalesce(src_resolved, tmp_src),
+       dst_resolved=coalesce(dst_resolved, tmp_dst)
+| fields - tmp_src, tmp_dst
