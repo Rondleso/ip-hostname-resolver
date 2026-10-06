@@ -23,7 +23,7 @@ changing any detection logic.
 
 ## 🏗️ Architecture
 
-<img width="1560" height="760" alt="ip_hostname_resolver" src="https://github.com/user-attachments/assets/9eb4fc8c-275d-4f6d-8f93-45c77d912de1" />
+<img width="780" height="380" alt="ip_hostname_resolver" src="https://github.com/user-attachments/assets/9eb4fc8c-275d-4f6d-8f93-45c77d912de1" />
 
 - **Build:** a daily report reads machine-account logons and merges them into the lookup.
 - **Use:** each correlation search calls the macro, which writes `src_resolved` / `dst_resolved` into the notable.
