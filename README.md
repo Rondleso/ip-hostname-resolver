@@ -27,6 +27,8 @@ changing any detection logic.
   <img width="780" height="380" alt="ip_hostname_resolver" src="https://github.com/user-attachments/assets/9eb4fc8c-275d-4f6d-8f93-45c77d912de1" />
 </div>
 
+``` ```
+
 - **Build:** a daily report reads machine-account logons and merges them into the lookup.
 - **Use:** each correlation search calls the macro, which writes `src_resolved` / `dst_resolved` into the notable.
 - The two sides share only the lookup definition, so either can change independently.
